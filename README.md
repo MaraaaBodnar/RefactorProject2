@@ -1,7 +1,7 @@
-**Загальний опис**
+**Загальний опис**  
 Цей проєкт реалізує систему розпізнавання емоцій у мовленні на основі обробки аудіо, витягнення ознак (features) та навчання моделі машинного навчання. Проєкт реалізований у вигляді бібліотеки з чіткою модульною структурою та застосуванням об’єктно-орієнтованих принципів, шаблонів проєктування та модульного тестування.
 
-Дизайн-принципи
+**Дизайн-принципи**
 Проєкт побудований на основі таких принципів проєктування:
 
 Single Responsibility Principle (SRP) – кожен клас виконує одну чітко визначену функцію (наприклад, AudioProcessor обробляє звук, FeatureExtractor витягує ознаки).
@@ -14,7 +14,7 @@ DRY (Don't Repeat Yourself) – спільна логіка винесена у 
 
 Modular Design – чіткий поділ на незалежні модулі.
 
-Структура та організація коду
+**Структура та організація коду**
 project_root/
 │
 ├── audio_processing.py          # Клас AudioProcessor + стратегії шумозниження
@@ -28,31 +28,28 @@ project_root/
 │
 └── README.md / documentation.md # Документація
 
-Використані шаблони проєктування
+**Використані шаблони проєктування**
 У проєкті реалізовано наступні шаблони проектування (Design Patterns):
 
-1. Strategy Pattern (DefaultNoiseReduction, SimpleNoiseReduction)
+1. *Strategy Pattern (DefaultNoiseReduction, SimpleNoiseReduction)*
 Дає змогу AudioProcessor використовувати різні алгоритми шумозниження без зміни свого коду.
 
 Інтерфейс стратегії: NoiseReductionStrategy
 
 Приклад використання:
-
-python
-Копіювати
-Редагувати
 processor = AudioProcessor(noise_reduction_strategy=DefaultNoiseReduction())
-2. Facade Pattern (FeatureExtractor)
+
+2. *Facade Pattern (FeatureExtractor)*
 Спрощує інтерфейс до кількох складних підсистем (MFCC, спектрограма, mel).
 
 Клієнт може викликати extract_mfcc, не думаючи про реалізацію.
 
-3. Decorator Pattern (ModelLogger)
+3. *Decorator Pattern (ModelLogger)*
 Обгортає модель EmotionRecognitionModel і логує час виконання train та predict.
 
-4. Factory Method (implicit) – створення моделі відбувається централізовано в EmotionRecognitionModel.__init__, і його можна вважати реалізацією фабричного методу для побудови Keras-моделі.
+4. *Factory Method (implicit)* – створення моделі відбувається централізовано в EmotionRecognitionModel.__init__, і його можна вважати реалізацією фабричного методу для побудови Keras-моделі.
 
-Структура модульних тестів
+**Структура модульних тестів**
 Тестування реалізоване за допомогою pytest. Загалом реалізовано 20 тестів, які покривають усі основні функціональні блоки:
 
 Категорії тестів:
