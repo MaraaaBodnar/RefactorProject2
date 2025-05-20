@@ -23,7 +23,7 @@ project_root/
 ├── utils.py  
 ├── __init__.py  
 │                          
-└── test_main.py  
+└── tests.py  
 
 **Використані шаблони проєктування**  
 У проєкті реалізовано наступні шаблони проектування (Design Patterns):  
