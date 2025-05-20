@@ -17,16 +17,13 @@ Modular Design – чіткий поділ на незалежні модулі.
 **Структура та організація коду**  
 project_root/  
 │  
-├── audio_processing.py          # Клас AudioProcessor + стратегії шумозниження  
-├── feature_extraction.py        # Витягнення ознак (MFCC, спектрограма, mel)  
-├── model.py                     # Клас моделі + декоратор логування  
-├── utils.py                     # Допоміжні функції (файли, JSON, енкодери)  
-├── __init__.py                  # Експортує API бібліотеки  
-│  
-├── tests/                       # Модульні тести (pytest)  
-│   └── test_main.py             # Основний файл з 20 тестами  
-│  
-└── README.md / documentation.md # Документація  
+├── audio_processing.py  
+├── feature_extraction.py  
+├── model.py  
+├── utils.py  
+├── __init__.py  
+│                          
+└── test_main.py  
 
 **Використані шаблони проєктування**  
 У проєкті реалізовано наступні шаблони проектування (Design Patterns):  
